@@ -66,7 +66,6 @@ export class SignUpComponent implements OnInit {
       this.error = error.message;
       return;
     }
-  /*
     const user = data.user;
     const session = data.session;
   
@@ -90,7 +89,7 @@ export class SignUpComponent implements OnInit {
       this.error = insertError.message;
       console.error('Erreur insertion profil :', insertError);
       return;
-    }*/
+    }
     console.log("Bien inscrit");
     alert('Compte créé avec succès !');
     this.signupForm.reset();

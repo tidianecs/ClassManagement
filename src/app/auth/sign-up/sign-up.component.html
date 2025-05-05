@@ -16,7 +16,7 @@
     <div class="text-left space-y-2">
       <label for="role" class="text-slate-900 text-lg">Role</label><br>
       <select formControlName="role" class="w-full h-8 rounded-md border border-slate-900 p-3" id="roles">
-        <option value="default" disabled selected>Select Role</option>
+        <option value="" disabled>Select Role</option>
         <option *ngFor="let role of roles; let i = index" [value]="role.name" > {{ role.name }} </option>
       </select>
     </div>

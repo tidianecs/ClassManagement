@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SupabaseService} from '../supabase.service';
 import { SupabaseClient, createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = 'https://avwtvnaxcvbpojfbuyft.supabase.co';
@@ -42,45 +41,45 @@ export class SignUpComponent implements OnInit {
   getRole(){
     return [
       { id: 0, name: "Teacher" },
-      { id: 1, name:  "Student" }
+      { id: 1, name: "Student" }
     ];
   }
 
   async onSubmit() {
-    if (this.signupForm.invalid) {
-      this.error = "Formulaire invalide";
-      alert("Formulaire invalide")
+    if (this.signupForm.invalid || this.signupForm.value.role === 'default') {
+      this.error = "Formulaire invalide ou rôle non sélectionné";
+      alert(this.error);
       return;
     }
-
+  
     const { email, password, firstName, lastName, role } = this.signupForm.value;
   
-    // Étape 1 : Créer le compte
+    console.log("SIGNUP PAYLOAD:", { email, password, firstName, lastName, role });
+  
     const { data, error } = await supabase.auth.signUp({
       email,
       password
     });
-    console.log('Sign up values:', { email, password, firstName, lastName, role });
-    
+  
     if (error) {
       this.error = error.message;
+      alert("Erreur signup: " + this.error);
       return;
     }
+  
     const user = data.user;
-    const session = data.session;
-  
-    if (!user || !session) {
-      this.error = 'Utilisateur non authentifié (email vérification requise ?)'; 
+    if (!user) {
+      this.error = 'Utilisateur non créé';
       return;
     }
   
-  const { error: insertError } = await supabase
+    const { error: insertError } = await supabase
       .from('profiles')
       .insert({
         id: user.id,
         first_name: firstName,
         last_name: lastName,
-        role: role,
+        role: role, // doit être une string: "Student" ou "Teacher"
         email: email,
         password: password
       });
@@ -90,8 +89,9 @@ export class SignUpComponent implements OnInit {
       console.error('Erreur insertion profil :', insertError);
       return;
     }
+  
     console.log("Bien inscrit");
     alert('Compte créé avec succès !');
-    this.signupForm.reset();
   }
+  
 }

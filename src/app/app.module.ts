@@ -11,6 +11,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import { StudentSidebarComponent } from './student-sidebar/student-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard
     SignUpComponent,
     LoginComponent,
     StudentDashboardComponent,
-    TeacherDashboardComponent
+    TeacherDashboardComponent,
+    StudentSidebarComponent
   ],
   imports: [
     BrowserModule,

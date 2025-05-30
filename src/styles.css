@@ -8,3 +8,16 @@ body{
     @apply bg-gray-700;
     @apply font-sans;
 }
+::ng-deep .fc {
+  background-color: #1a1a1a;
+  color: #f1f5f9;
+}
+::ng-deep .fc-event {
+  background-color: #1f2937 !important;
+  border: none;
+}
+.fc-toolbar-title {
+  color: #f1f5f9;
+  font-weight: 600;
+  font-size: 1.5rem;
+}

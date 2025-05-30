@@ -13,6 +13,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { StudentSidebarComponent } from './student-sidebar/student-sidebar.component';
 import { TimetableComponent } from './timetable/timetable.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { TimetableComponent } from './timetable/timetable.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,37 @@
+<div class="flex mt-2">
+    <app-student-sidebar></app-student-sidebar>
+    <div class="flex-1 p-10 ml-80">
+    <h2 class="text-3xl font-bold text-white mb-8">📅 Mon Emploi du Temps</h2>
+
+    <div *ngIf="timetable.length > 0; else noData">
+      <div class="overflow-x-auto rounded-2xl shadow-md border border-gray-700">
+        <table class="min-w-full bg-gray-800 rounded-xl">
+          <thead class="bg-gray-700 text-stone-200 text-left">
+            <tr>
+              <th class="p-4">Jour</th>
+              <th class="p-4">Début</th>
+              <th class="p-4">Fin</th>
+              <th class="p-4">Matière</th>
+              <th class="p-4">Professeur</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of timetable" class="border-t border-gray-700 hover:bg-gray-700 transition">
+              <td class="p-4">{{ item.day }}</td>
+              <td class="p-4">{{ item.start_time }}</td>
+              <td class="p-4">{{ item.end_time }}</td>
+              <td class="p-4">{{ item.subject }}</td>
+              <td class="p-4">{{ item.teacher_name }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <ng-template #noData>
+      <div class="mt-10 text-center text-stone-400">
+        <p class="text-lg">Aucun emploi du temps trouvé.</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

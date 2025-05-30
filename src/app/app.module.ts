@@ -12,6 +12,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { StudentSidebarComponent } from './student-sidebar/student-sidebar.component';
+import { TimetableComponent } from './timetable/timetable.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StudentSidebarComponent } from './student-sidebar/student-sidebar.compo
     LoginComponent,
     StudentDashboardComponent,
     TeacherDashboardComponent,
-    StudentSidebarComponent
+    StudentSidebarComponent,
+    TimetableComponent
   ],
   imports: [
     BrowserModule,

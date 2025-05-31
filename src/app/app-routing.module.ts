@@ -6,6 +6,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { TimetableComponent } from './timetable/timetable.component';
+import { StudentNotificationsComponent } from './student-notifications/student-notifications.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'student-dashboard', component: StudentDashboardComponent },
   { path: 'teacher-dashboard', component: TeacherDashboardComponent },
-  { path: 'calendar', component: TimetableComponent }
+  { path: 'calendar', component: TimetableComponent },
+  { path: 'student-notifications', component: StudentNotificationsComponent }
 ];
 
 @NgModule({

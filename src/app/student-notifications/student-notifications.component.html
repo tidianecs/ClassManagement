@@ -1,0 +1,14 @@
+<div class="flex mt-2">
+    <app-student-sidebar></app-student-sidebar>
+    <div class="p-6 ml-80 mt-28 w-full">
+        <h2 class="text-2xl font-semibold mb-4 text-stone-300">Notifications</h2>
+        <div *ngFor="let notif of notifications" class="bg-gray-800 text-white p-4 mb-3 rounded-xl shadow-md hover:shadow-black hover:shadow-lg ease-in duration-300">
+            <h3 class="font-bold">{{ notif.title }}</h3>
+            <p>{{ notif.message }}</p>
+            <p class="text-sm text-gray-400">{{ notif.created_at | date:'short' }}</p>
+            <button *ngIf="!notif.is_read" class="mt-2 px-3 py-1 bg-stone-300 rounded text-gray-700" (click)="markAsRead(notif.id)">
+            Marquer comme lu
+            </button>
+        </div>
+    </div>
+</div>

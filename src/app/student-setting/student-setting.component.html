@@ -1,0 +1,19 @@
+<div class="flex mt-2">
+    <app-student-sidebar></app-student-sidebar>
+    <div class="p-6 text-stone-300 ml-80 mt-28 w-full">
+        <h2 class="text-2xl font-semibold mb-4">Paramètres</h2>
+        <div class="mb-6">
+            <label class="block mb-2">Changer le mot de passe</label>
+            <input type="password" [(ngModel)]="newPassword" class="bg-gray-700 rounded px-4 py-2 w-full mb-2" placeholder="Nouveau mot de passe">
+            <button (click)="updatePassword()" class="bg-gray-900 px-4 py-2 rounded">Valider</button>
+        </div>
+        <div class="mb-6">
+            <label class="block mb-2">Thème</label>
+            <select class="bg-gray-900 rounded px-4 py-2 w-1/4">
+            <option>Sombre</option>
+            <option>Clair</option>
+            </select>
+        </div>
+    </div>
+
+</div>

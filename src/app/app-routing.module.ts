@@ -7,6 +7,7 @@ import { StudentDashboardComponent } from './student-dashboard/student-dashboard
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { TimetableComponent } from './timetable/timetable.component';
 import { StudentNotificationsComponent } from './student-notifications/student-notifications.component';
+import { StudentSettingComponent } from './student-setting/student-setting.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'student-dashboard', component: StudentDashboardComponent },
   { path: 'teacher-dashboard', component: TeacherDashboardComponent },
   { path: 'calendar', component: TimetableComponent },
-  { path: 'student-notifications', component: StudentNotificationsComponent }
+  { path: 'student-notifications', component: StudentNotificationsComponent },
+  { path: 'student-setting', component: StudentSettingComponent }
 ];
 
 @NgModule({

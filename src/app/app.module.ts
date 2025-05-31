@@ -15,6 +15,7 @@ import { StudentSidebarComponent } from './student-sidebar/student-sidebar.compo
 import { TimetableComponent } from './timetable/timetable.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { StudentNotificationsComponent } from './student-notifications/student-notifications.component';
+import { StudentSettingComponent } from './student-setting/student-setting.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { StudentNotificationsComponent } from './student-notifications/student-n
     TeacherDashboardComponent,
     StudentSidebarComponent,
     TimetableComponent,
-    StudentNotificationsComponent
+    StudentNotificationsComponent,
+    StudentSettingComponent
   ],
   imports: [
     BrowserModule,
